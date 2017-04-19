@@ -1,6 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 
-var url = 'mongodb://localhost:27017/gsClasses'; // строка запроса
+var url = 'mongodb://localhost:27017/gsClasses';
 /*MongoClient.connect(url, function(err, db) {
 	console.log("Connected correctly to server");
 	db.collection('students').find().toArray(function(err, docs){
@@ -45,10 +45,10 @@ MongoClient.connect(url, function(err, db) {
 });
 */
 
-/*
+
 MongoClient.connect(url, function(err, db) {
 	console.log("Connected correctly to server");
-	db.collection('students').find().sort({id : -1}).limit(20).toArray(function(err, docs){
+	db.collection('students').find().sort({$natural: -1}).limit(20).toArray(function(err, docs){
 		if (err) {
 			console.log('Error', err);
 		}
@@ -57,7 +57,7 @@ MongoClient.connect(url, function(err, db) {
 			db.close();
 		}
 	});
-});*/
+});
 
 
 
